@@ -8,7 +8,8 @@ double power(double x, int q) {
     }
 
     double m = x;
-    for (int i = 1; i < q; i++) {
+    for (int i = 1; i < q; i++) { //1, 2, 3... q-1
+            m*=x;
         //HERE
         //this line should do some operation to achieve multiplications
         //only ONE line to be ADD
@@ -22,7 +23,7 @@ int main() {
     printf("請輸入浮點數x的值以及多項式含有的項數正整數y︰");
 
     //variable declaration
-    double x;
+    double x; //float %f
     int y;
 
     //get from standard input
@@ -36,7 +37,7 @@ int main() {
     int q[6];
 
     //iterate each line
-    for (int i = 0; i < y; i++) {
+    for (int i = 0; i < y; i++) { //0, 1, 2.. y-1
         //fetch input
         scanf("%lf%d", &p[i], &q[i]);
 
@@ -46,8 +47,9 @@ int main() {
         //the left variable and right expression should be UNTOUCHED
         //only the OPERATION to be MODIFIED
         //please refer to page 6 of Operation slides to get some idea
-        result = p[i] * power(x, q[i]);
+        result += p[i] * power(x, q[i]);
     }
 
     printf("%lf\n", result);
 }
+
